@@ -1,0 +1,73 @@
+\RequirePackage{graphicx}
+
+\def\ps@cartaintestata{
+
+\def\@oddhead{%
+\if\thepage1%
+%first page header
+\vbox to 0pt{
+\vskip -110pt
+\hbox to 0pt{
+\hskip -77pt
+\includegraphics[width=7cm]{medres_logo_sapienza.png}
+\hss
+}
+\vskip 0pt
+\hbox{\sc\scriptsize \csname cda\endcsname}
+\vss
+}
+\hfill
+\else%
+%other page header
+\vbox to 0pt{
+\vskip -110pt
+\hbox to 0pt {%
+\hbox to \textwidth {
+\hskip -54pt
+\includegraphics[width=7cm]{medres_logo_sapienza.png}
+\hfill
+\vbox to 0pt{\vskip -30pt\hbox{\sf Pag.\ \thepage}\vss}
+}
+\hss
+}
+\vss
+}
+\hfill
+\fi
+}
+
+%footer
+\def\@oddfoot{%
+\if\thepage1%
+\vbox{
+\sf
+\vskip 45pt
+% \baselineskip -10pt
+\renewcommand{\baselinestretch}{0.9}
+\noindent\scriptsize\thisfooter
+}\hss
+\fi
+}
+
+% unused  \def\@evenhead{xxx}
+% unused  \def\@evenfoot{wwwwww}
+}
+
+% versione dis
+
+\def\dis{
+\def\thisfooter{Dipartimento di Fisica\hfill\break
+Sapienza, Università di Roma\hfill\break
+P.le Aldo Moro 5, 00185 Roma, Italia\hfill\break
+www.dis.uniroma1.it}
+}
+
+\dis
+
+\advance\topmargin by 60pt
+\advance\textheight by -30pt
+\advance\oddsidemargin by 0pt
+\advance\evensidemargin by 0pt
+\advance\textwidth by 0pt
+
+\pagestyle{cartaintestata}
